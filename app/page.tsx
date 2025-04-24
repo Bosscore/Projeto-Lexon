@@ -9,6 +9,7 @@ import LetterCard from "@/components/letter-card"
 export default function Home() {
   const [text, setText] = useState("Hello")
   const [letterAssociations, setLetterAssociations] = useState({})
+  const [isLoaded, setIsLoaded] = useState(false)
 
   // Initialize default letter associations
   useEffect(() => {
@@ -48,7 +49,12 @@ export default function Home() {
     }
 
     setLetterAssociations(defaultAssociations)
+    setIsLoaded(true)
   }, [])
+
+  if (!isLoaded) {
+    return <div className="p-8 text-center">Loading...</div>
+  }
 
   return (
     <main className="container mx-auto p-4 max-w-4xl">
@@ -86,7 +92,7 @@ export default function Home() {
         <div className="flex flex-wrap justify-center gap-2">
           {text.split("").map((char, index) => (
             <div key={index} className="flex flex-col items-center">
-              {char.match(/[a-z]/i) ? (
+              {char.match(/[a-z]/i) && letterAssociations[char.toLowerCase()] ? (
                 <LetterCard letter={char.toLowerCase()} association={letterAssociations[char.toLowerCase()]} />
               ) : (
                 <div className="w-20 h-20"></div>
@@ -110,4 +116,3 @@ export default function Home() {
     </main>
   )
 }
-
