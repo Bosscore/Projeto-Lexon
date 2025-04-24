@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import LetterCard from "@/app/components/letter-card"
+import LetterCard from "@/components/letter-card"
 
 export default function Home() {
   const [text, setText] = useState("Hello")
