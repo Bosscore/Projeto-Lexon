@@ -25,10 +25,10 @@ export default function Home() {
 
     // Add some example associations
     defaultAssociations["a"] = {
-      image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=150&h=150&fit=crop",
+      image: "https://github.com/Bosscore/Projeto-Lexon/blob/main/app/public/images/A.png",
       gesture:
-        "https://images.pexels.com/photos/4049096/pexels-photo-4049096.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1",
-      sound: "https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3",
+        null,
+      sound: "https://github.com/Bosscore/Projeto-Lexon/blob/main/app/public/sounds/Aaa.wav",
       color: "#FFCDD2", // light red
     }
 
